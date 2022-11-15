@@ -19,15 +19,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     
     steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/labeler@v2
-        with:
-          repo-token: ${{ secrets.REPO_TOKEN }}
-      - run: git config --global user.email "scd1212@naver.com"
-      - run: git config --global user.name "SerVerKim"
-      # - run: git config --global credential.helper wincred
       - name: Checkout
         uses: actions/checkout@v3
+      - run: git config --global user.email "scd1212@naver.com"
+      - run: git config --global user.name "SerVerKim"
+      - run: git config --global credential.helper wincred
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
