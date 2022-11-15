@@ -25,6 +25,7 @@ jobs:
           repo-token: ${{ secrets.REPO_TOKEN }}
       - run: git config --global user.email "scd1212@naver.com"
       - run: git config --global user.name "scd7896"
+      - run: git config --global credential.helper wincred
       - name: Checkout
         uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
