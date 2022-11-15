@@ -1,0 +1,25 @@
+{
+  "name": "create-next-markdown-blog-app",
+  "version": "1.0.0",
+  "description": "nextjs markdown blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "create-next-markdown-blog-app": "./bin/generate-app.js"
+  },
+  "keywords": [
+    "nextjs",
+    "blog",
+    "typescript",
+    "markdown",
+    "boilerplate"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scd7896/nextjs-markdown-base.git"
+  },
+  "author": "SerVerKim",
+  "license": "ISC"
+}
