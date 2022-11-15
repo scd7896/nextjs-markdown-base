@@ -7,7 +7,7 @@ import { remark } from 'remark';
 
 
 export async function getPostData(id: string) {
-  const fullPath = path.join('public', "posts", `${id}.md`);
+  const fullPath = path.join("posts", `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   
 
