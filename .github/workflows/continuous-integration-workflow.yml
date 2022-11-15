@@ -3,7 +3,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build-test-deploy:
+  build-test:
     runs-on: ubuntu-latest
 
     strategy:
@@ -21,4 +21,20 @@ jobs:
       - run: npm install
       - run: npm run test
       - run: npm run build
-      - run: npm run deploy
+
+  deploy: 
+    needs: build-test
+
+    permissions: 
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@2v1
