@@ -17,8 +17,12 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
+    
     steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/labeler@v2
+        with:
+          repo-token: ${{ secrets.REPO_TOKEN }}
       - name: Checkout
         uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
@@ -29,8 +33,5 @@ jobs:
       - run: npm install
       - run: npm run test
       - run: npm run build
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
-        with:
-          token: ${{ secrets.REPO_TOKEN }}
+      - run: npm run deploy
+      
