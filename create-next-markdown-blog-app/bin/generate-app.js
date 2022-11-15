@@ -37,7 +37,7 @@ async function main() {
     if (projectName !== ".") {
       process.chdir(projectPath);
     }
-    
+    execSync("rm -rf create-next-markdown-blog-app");
     console.log("Installing dependencies...");
     execSync("npm install");
 
