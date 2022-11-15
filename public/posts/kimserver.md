@@ -1,3 +1,7 @@
+---
+title: title-hello
+id: kimserver
+---
 # hello
 ## myname is kimserver
 

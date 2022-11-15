@@ -1,34 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next js - markdown
 
-## Getting Started
+## 개요
+마크다운을 이용한 블로그, 포트폴리오 사이트를 만들기 위한 보일러 플레이트 입니다.  
+next js와 markdown을 사용하고 있습니다.
 
-First, run the development server:
+### 지원기능
+- public/posts에 md 파일을 작성하면 ```/posts/{md 파일 명}``` 으로 사이트를 만들어 줍니다.
+- public/posts에 md 파일에 헤더를 작성하면 그것을 바탕으로 list를 알 수 있는 json 파일을 생성해줍니다.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### 사용 방법
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## TodoList
+[x] markdown과 html을 작성하면 html 컨텐츠 변환
+[ ] 빌드 단계에서 public/posts 폴더를 봐서 path 리스트를 추가할 수 있도록 작성
+[ ] 빌드 단계에서 public/posts 폴더 안에 md 파일들을 확인하며 public/list.json 파일 생성
