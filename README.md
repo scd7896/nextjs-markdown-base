@@ -15,6 +15,7 @@ next js기반으로 사용하고 있습니다.
 - 깃헙페이지를 사용하고자 하시는 분들은 github secrets를 설정해주셔야 합니다.
   - https://github.com/settings/tokens 에서 repo_hook, repo, user 권한을 모두 준 토큰을 하나 만듭니다.
   - 만든 토큰을 repo -> settings -> Secrets 에 REPO_TOKEN 이라는 이름으로 하나 만듭니다.
+  - repo -> settings -> environments -> github-pages 로 들어가서 Deployment branchs를 gh-pages와 main으로 설정합니다.
   - 프로젝트로 돌아와서 next.config.js의 basePath.production을 자신의 repo 이름으로 넣고 main으로 푸쉬 하면 자동으로 github actions이 작동되어 빌드 후 배포하게 됩니다. 
 - 게시물 작성 방법
   - posts 폴더에 md 파일을 추가해서 작성하면 됩니다. markdown 뿐만 아니라 html, js도 작성이 가능합니다.
