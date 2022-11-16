@@ -2,8 +2,6 @@
 
 export default function Home() {
   return (
-    <div>
-      ㄴㅁㄹㅁㄴㅇㄹ
-    </div>
+    <div>Home</div>
   )
 }

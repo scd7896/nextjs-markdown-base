@@ -22,8 +22,3 @@ next js기반으로 사용하고 있습니다.
 - 템플릿 수정 방법
   - 프로젝트의 ```/pages/posts/[id].tsx```를 수정하면 됩니다. 
   - 정적 빌드 배포로 내보내는 것이 원칙이기 때문에, 빌드시에 스타일만 적용 할 수 있다면 어떤 스타일링을 하셔도 문제 없습니다.
-
-## TodoList
-[x] markdown과 html을 작성하면 html 컨텐츠 변환  
-[ ] 빌드 단계에서 public/posts 폴더를 봐서 path 리스트를 추가할 수 있도록 작성  
-[ ] 빌드 단계에서 public/posts 폴더 안에 md 파일들을 확인하며 public/list.json 파일 생성  

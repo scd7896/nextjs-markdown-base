@@ -1,4 +1,4 @@
-import { getPostData } from "../../lib/posts";
+import { createListJson, getPostData, getPostList } from "../../lib/posts";
 
 
 export default function Post({ postData }: any) {
@@ -6,7 +6,7 @@ export default function Post({ postData }: any) {
     <div>
       {postData.title}
       <br />
-      {postData.id}
+      {postData.author}
       <br />
       {postData.date}
       <br />
@@ -27,9 +27,10 @@ export async function getStaticProps({ params }: any) {
 }
 
 export const getStaticPaths = async () => {
-
+  const fileNames = getPostList();
+  createListJson();
   return {
-      paths: ["/posts/kimserver"], //indicates that no page needs be created at build time
+      paths: fileNames.map(it => `/posts/${it}`), //indicates that no page needs be created at build time
       fallback: 'blocking' //indicates the type of fallback
   }
 }
