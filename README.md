@@ -4,6 +4,8 @@
 markdown을 이용한 블로그, 포트폴리오 사이트를 만들기 위한 보일러 플레이트 입니다.  
 next js기반으로 사용하고 있습니다.
 
+### 설치 방법
+```npx create-next-markdown-blog-app my-app```
 ### 지원기능
 - public/posts에 md 파일을 작성하면 ```/posts/{md 파일 명}``` 으로 사이트를 만들어 줍니다.
 - public/posts에 md 파일에 헤더를 작성하면 그것을 바탕으로 list를 알 수 있는 json 파일을 생성해줍니다.

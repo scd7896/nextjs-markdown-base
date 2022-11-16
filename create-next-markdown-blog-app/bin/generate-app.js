@@ -38,10 +38,8 @@ async function main() {
       process.chdir(projectPath);
     }
     execSync("rm -rf create-next-markdown-blog-app");
-    console.log("Installing dependencies...");
-    execSync("npm install");
-
     console.log("Removing useless file");
+    
     execSync("npx rimraf ./.git");
     console.log("The installation is done, this is ready to use !");
   } catch(err) {
