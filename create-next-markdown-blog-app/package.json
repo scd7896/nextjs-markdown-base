@@ -1,6 +1,6 @@
 {
   "name": "create-next-markdown-blog-app",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "nextjs markdown blog",
   "main": "index.js",
   "bin": {

@@ -3,6 +3,7 @@
 const { execSync } = require("child_process");
 const path = require("path");
 const fs = require("fs");
+const os = require("os");
 
 if (process.argv.length < 3) {
   console.log("You have to provide a name to your app.");
@@ -37,8 +38,13 @@ async function main() {
     if (projectName !== ".") {
       process.chdir(projectPath);
     }
-    execSync("rm -rf create-next-markdown-blog-app");
-    console.log("Removing useless file");
+
+    if (os.platform() === "win32" || os.platform() === "win64") {
+      execSync("rmdir /s /q create-next-markdown-blog-app");
+    } else {
+      execSync("rm -rf create-next-markdown-blog-app");
+      console.log("Removing useless file");
+    }
     
     execSync("npx rimraf ./.git");
     console.log("The installation is done, this is ready to use !");
