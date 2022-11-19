@@ -7,7 +7,7 @@ import { remark } from 'remark';
 
 
 export async function getPostData(id: string) {
-  const fullPath = path.join("posts", `${id}.md`);
+  const fullPath = path.join(process.cwd(), "posts", `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   
 
@@ -32,8 +32,8 @@ export async function getPostData(id: string) {
 }
 
 export function createListJson() {
-  const dirs = fs.readdirSync("posts");
-  const filePaths = dirs.map(dir => path.join("posts", dir));
+  const dirs = fs.readdirSync(path.join(process.cwd(), "posts"));
+  const filePaths = dirs.map(dir => path.join(process.cwd(), "posts", dir));
   const fileContents = filePaths.map(filePath => fs.readFileSync(filePath, 'utf8'));
   const matterResults: any = fileContents.map(contents => matter(contents));
 
