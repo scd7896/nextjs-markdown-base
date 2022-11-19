@@ -1,6 +1,6 @@
 ---
-title: example
-author: kimserver
+title: example2
+author: kimserver2
 ---
 # hello
 ## this is Example222222
