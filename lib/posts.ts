@@ -14,15 +14,25 @@ export async function getPostData(id: string) {
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents);
 
+  let hrlineCount = 0;
+  
+  const matterHTMLContent = matterResult.orig.toString().split("\n")
+    .filter((text)=> {
+      if (text === "---" && hrlineCount < 2) {
+        hrlineCount++;
+        return false;
+      }
+      return hrlineCount >= 2;
+    })
+
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
     .use(remarkParse)
     .use(html, {sanitize: false})
-    .process(matterResult.content);
+    .process(matterHTMLContent.join("\n"));
   const contentHtml = processedContent.toString();
 
-  console.log(matterResult)
-  console.log("contentHTML", contentHtml)
+  console.log("contentHTML:", contentHtml)
 
   // Combine the data with the id and contentHtml
   return {
